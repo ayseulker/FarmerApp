@@ -39,29 +39,67 @@ function bacakBulma() {
     toplamBacak = inek + tavuk + domuz + koyun;
 
     lblSonuc.innerHTML = "Stokta olan bacak sayısı: " + toplamBacak;
-    
+
 }
 
 bacakBulma();
 
 
-let animals = ["inek", "inek", "tavuk", "tavuk", "tavuk", "domuz", "domuz", "koyun", "koyun"];
+let animalss = ["inek", "inek", "tavuk", "tavuk", "tavuk", "domuz", "domuz", "koyun", "koyun"];
 let bacakSayilari = {
   "inek": 4,
   "tavuk": 2,
   "domuz": 4,
   "koyun": 4
 };
-let toplamBacakSayisi = 0;
+let toplamBacakSayisii = 0;
 let helalHayvan = ["inek" , "tavuk" ,"koyun"]
 
 
 
-for (let animal of animals) {
+for (let animal of animalss) {
   if (animal in bacakSayilari && helalHayvan.includes(animal)) { // hayvanın bacak sayısı biliniyorsa
-    toplamBacakSayisi += bacakSayilari[animal]; // toplam bacak sayısını güncelle
+    toplamBacakSayisii += bacakSayilari[animal]; // toplam bacak sayısını güncelle
   }
 }
 
+console.log("Toplam bacak sayısı: " + toplamBacakSayisii);
+
+
+
+let animals = [
+    {
+        hayvan: "inek",
+        bacakSayisi: 4,
+        hayvanSayisi: 2
+    },
+    {
+        hayvan: "tavuk",
+        bacakSayisi: 2,
+        hayvanSayisi: 3
+    },
+    {
+        hayvan: "domuz",
+        bacakSayisi: 4,
+        hayvanSayisi: 2
+    },
+    {
+        hayvan: "koyun",
+        bacakSayisi: 4,
+        hayvanSayisi: 2
+    }
+];
+let toplamBacakSayisi = 0;
+
+
+
+
+for (let animal=0;animal<animals.length ; animal++) {
+    if (animals[animal].hayvan !== "domuz") {
+        toplamBacakSayisi += animals[animal].bacakSayisi* animals[animal].hayvanSayisi
+    }
+}
+
 console.log("Toplam bacak sayısı: " + toplamBacakSayisi);
+
 
